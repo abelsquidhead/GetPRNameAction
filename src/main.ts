@@ -30,6 +30,9 @@ async function run(): Promise<void> {
     console.log("prBody: " + prBody);
     console.log("title: " + title);
 
+    core.exportVariable("PR_URL", prUrl);
+    core.exportVariable("PR_TITLE", title);
+    core.exportVariable("PR_NUMBER", prNumber);
 
   } catch (error) {
     core.setFailed(error.message)
