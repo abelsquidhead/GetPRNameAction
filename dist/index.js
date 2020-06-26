@@ -2448,8 +2448,8 @@ function run() {
             const title = pullRequest.title;
             // print out the info from PR
             console.log("prUrl: " + prUrl);
-            console.log("prBody: " + prBody);
             console.log("title: " + title);
+            console.log("number: " + prNumber);
             core.exportVariable("PR_URL", prUrl);
             core.exportVariable("PR_TITLE", title);
             core.exportVariable("PR_NUMBER", prNumber);

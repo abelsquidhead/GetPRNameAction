@@ -27,8 +27,8 @@ async function run(): Promise<void> {
 
     // print out the info from PR
     console.log("prUrl: " + prUrl);
-    console.log("prBody: " + prBody);
     console.log("title: " + title);
+    console.log("number: "+ prNumber);
 
     core.exportVariable("PR_URL", prUrl);
     core.exportVariable("PR_TITLE", title);
