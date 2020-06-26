@@ -1,10 +1,9 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Get PR Name Action'
+description: 'This action saves a unique string represented by the url of the PR into an environment variable'
+author: 'abelsquidhead'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  myTOken:              # change this
+    description: 'GitHub Token'
 runs:
   using: 'node12'
   main: 'dist/index.js'
