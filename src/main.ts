@@ -6,7 +6,9 @@ import {wait} from './wait'
 async function run(): Promise<void> {
   try {
     // get input values
+    console.log("In action, getting github token");
     const myToken = core.getInput('githubToken');
+    console.log("got token: " + myToken);
     console.log("myToken: " + myToken);
 
     // get reference to octokit

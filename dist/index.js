@@ -2431,7 +2431,9 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             // get input values
-            const myToken = core.getInput('myToken');
+            console.log("In action, getting github token");
+            const myToken = core.getInput('githubToken');
+            console.log("got token: " + myToken);
             console.log("myToken: " + myToken);
             // get reference to octokit
             const octokit = github.getOctokit(myToken);
@@ -2450,10 +2452,14 @@ function run() {
             console.log("prUrl: " + prUrl);
             console.log("title: " + title);
             console.log("number: " + prNumber);
+            // save values as environment variables
             core.exportVariable("PR_URL", prUrl);
             core.exportVariable("PR_TITLE", title);
             core.exportVariable("PR_NUMBER", prNumber);
-            console.log("done");
+            // output values as output variables
+            core.setOutput("url", prUrl);
+            core.setOutput("title", title);
+            core.setOutput("number", prNumber);
         }
         catch (error) {
             core.setFailed(error.message);
