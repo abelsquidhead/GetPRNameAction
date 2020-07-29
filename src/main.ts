@@ -34,6 +34,8 @@ async function run(): Promise<void> {
     core.exportVariable("PR_TITLE", title);
     core.exportVariable("PR_NUMBER", prNumber);
 
+    console.log("done");
+
   } catch (error) {
     core.setFailed(error.message)
   }

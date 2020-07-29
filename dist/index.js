@@ -1,4 +1,4 @@
-module.exports =
+require('./sourcemap-register.js');module.exports =
 /******/ (function(modules, runtime) { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	// The module cache
@@ -2453,6 +2453,7 @@ function run() {
             core.exportVariable("PR_URL", prUrl);
             core.exportVariable("PR_TITLE", title);
             core.exportVariable("PR_NUMBER", prNumber);
+            console.log("done");
         }
         catch (error) {
             core.setFailed(error.message);
@@ -10091,3 +10092,4 @@ function onceStrict (fn) {
 /***/ })
 
 /******/ });
+//# sourceMappingURL=index.js.map
