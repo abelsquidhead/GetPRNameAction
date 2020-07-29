@@ -2,8 +2,15 @@ name: 'Get PR Name Action'
 description: 'This action saves a unique string represented by the url of the PR into an environment variable'
 author: 'abelsquidhead'
 inputs:
-  myTOken:              # change this
+  githubToken:              # change this
     description: 'GitHub Token'
+outputs:
+  url:
+    description: 'URL to the pull request'
+  title:
+    description: 'Title to the pull request'
+  number:
+    description: 'Pull request number'
 runs:
   using: 'node12'
   main: 'dist/index.js'

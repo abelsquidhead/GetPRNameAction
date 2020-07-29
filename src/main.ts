@@ -6,7 +6,7 @@ import {wait} from './wait'
 async function run(): Promise<void> {
   try {
     // get input values
-    const myToken = core.getInput('myToken');
+    const myToken = core.getInput('githubToken');
     console.log("myToken: " + myToken);
 
     // get reference to octokit
@@ -30,12 +30,15 @@ async function run(): Promise<void> {
     console.log("title: " + title);
     console.log("number: "+ prNumber);
 
+    // save values as environment variables
     core.exportVariable("PR_URL", prUrl);
     core.exportVariable("PR_TITLE", title);
     core.exportVariable("PR_NUMBER", prNumber);
 
-    console.log("done");
-
+    // output values as output variables
+    core.setOutput("url", prUrl);
+    core.setOutput("title", title);
+    core.setOutput("number", prNumber);
   } catch (error) {
     core.setFailed(error.message)
   }
